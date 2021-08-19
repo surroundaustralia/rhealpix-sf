@@ -51,7 +51,7 @@ print(f"b intersects c, expected False, returns: {sfIntersects(b, c)}")
 ## Testing
 All tests are in `tests/` and implemented using [unittest](http://docs.python.org/library/unittest.html).
 
-There are individual tests for each of the Cell and CellCollection operations. 
+There are sets of tests for each of the Simple Feature functions. 
 
 ## Contributing
 Via GitHub, Issues & Pull Requests: 
