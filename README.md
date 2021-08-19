@@ -40,13 +40,13 @@ print(f"b intersects c, expected False, returns: {sfIntersects(b, c)}")
 
 ## Function Definitions
 
-sfEqual: Two sets of cells are equal if they have the same identifier.  
-sfWithin: One set of cells (A) is within some other set of cells (B) if the addition of A's cells to B results in a set of cells equal to B, where A is not equal to B.  
-sfContains: One set of cells (A) is contains some other set of cells (B) if the addition of A's cells to B results in a set of cells equal to A, where A is not equal to B.  
-sfIntersects: One set of cells (A) intersects some other set of cells (B) where they share any two cells, or any cell in A is the parent or child of a cell in B, or any cell in A or B touches.  
-sfTouches: One set of cells (A) touches some other set of cells (B) where the cells meet at an edge, or vertex.  
-sfDisjoint: One set of cells (A) is disjoint with some other set of cells (B) where they do not share any two cells, no cell in A is the parent or child of a cell in B, and no cells in A and B touch.  
-sfOverlaps: One set of cells (A) overlaps some other set of cells (B) where the addition of A's cells to B results in a set of cells different from A and B, and A and B are not disjoint and do not touch.   
+**sfEqual:** Two sets of cells are equal if they have the same identifier.  
+**sfWithin:** One set of cells (A) is within some other set of cells (B) if the addition of A's cells to B results in a set of cells equal to B, where A is not equal to B.  
+**sfContains:** One set of cells (A) is contains some other set of cells (B) if the addition of A's cells to B results in a set of cells equal to A, where A is not equal to B.  
+**sfIntersects:** One set of cells (A) intersects some other set of cells (B) where they share any two cells, or any cell in A is the parent or child of a cell in B, or any cell in A or B touches.  
+**sfTouches:** One set of cells (A) touches some other set of cells (B) where the cells meet at an edge, or vertex.  
+**sfDisjoint:** One set of cells (A) is disjoint with some other set of cells (B) where they do not share any two cells, no cell in A is the parent or child of a cell in B, and no cells in A and B touch.  
+**sfOverlaps:** One set of cells (A) overlaps some other set of cells (B) where the addition of A's cells to B results in a set of cells different from A and B, and A and B are not disjoint and do not touch.   
 
 ## Testing
 All tests are in `tests/` and implemented using [unittest](http://docs.python.org/library/unittest.html).
