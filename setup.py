@@ -4,7 +4,7 @@ from setuptools import setup
 def get_version():
     from pathlib import Path
 
-    init_path = Path("rheal/__init__.py")
+    init_path = Path("rhealsf/__init__.py")
 
     with init_path.open() as file_:
         for line in file_.readlines():
