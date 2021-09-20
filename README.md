@@ -4,7 +4,8 @@ This library contains functions for evaluating Simple Feature relations between 
 A wrapped version of this library is available as an RDFLib extension for GeoSPARQL queries: [geosparql-dggs](https://github.com/RDFLib/geosparql-dggs).
   
 ## Installation 
-Coming to PyPI.
+Using PIP:  
+```pip install rhealpix-sf```
 
 This package depends on the [rhealpix-geo](https://github.com/surroundaustralia/rhealpix-geo) package to represent valid sets of Cells, and perform low level operations required to implement these functions.
 
