@@ -6,7 +6,6 @@ CHANGELOG:
 - 2021-07-19:   David Habgood (DH): Initial version
 - 2021-09-20:   DH: converted from Unittest to pytest, minor bugfixes
 """
-import pytest
 from rhealsf import *
 
 
