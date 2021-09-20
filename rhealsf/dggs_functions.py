@@ -4,8 +4,8 @@ from rheal.dggs_classes import CellCollection
 
 class DGGSsfRelationships:
     def __init__(
-        self, cell_or_cells_1: Union[str, list], cell_or_cells_2: Union[str, list]
-    ):
+            self, cell_or_cells_1: Union[str, list], cell_or_cells_2: Union[str, list]
+            ):
         self.coll_1 = CellCollection(cell_or_cells_1)
         self.coll_2 = CellCollection(cell_or_cells_2)
 
@@ -60,11 +60,11 @@ class DGGSsfRelationships:
         """
         # implemented as a negative test for disjoint, equals, contains, and within
         if (
-            not cls.sfDisjoint(cells_one, cells_two)
-            and not cls.sfEquals(cells_one, cells_two)
-            and not cls.sfContains(cells_one, cells_two)
-            and not cls.sfWithin(cells_one, cells_two)
-            and not cls.sfTouches(cells_one, cells_two)
+                not cls.sfDisjoint(cells_one, cells_two)
+                and not cls.sfEquals(cells_one, cells_two)
+                and not cls.sfContains(cells_one, cells_two)
+                and not cls.sfWithin(cells_one, cells_two)
+                and not cls.sfTouches(cells_one, cells_two)
         ):
             return True
         return False
@@ -78,8 +78,8 @@ class DGGSsfRelationships:
         """
         SF = cls(cells_one, cells_two)
         if not region_region_intersection(
-            SF.coll_1.cell_suids, SF.coll_2.cell_suids
-        ) and not cls.sfTouches(cells_one, cells_two):
+                SF.coll_1.cell_suids, SF.coll_2.cell_suids
+                ) and not cls.sfTouches(cells_one, cells_two):
             return True
         return False
 
@@ -108,10 +108,9 @@ class DGGSsfRelationships:
         if cls.sfEquals(cells_one, cells_two):
             return False
         # if the geometries have regional intersection, they do not touch, they have some other spatial relationship
-        # TODO confirm whether this is desired behaviour.
-        if region_region_intersection(cells_one, cells_two):
-            return False
         SF = cls(cells_one, cells_two)
+        if region_region_intersection(SF.coll_1.cell_suids, SF.coll_2.cell_suids):
+            return False
         # find the max resolution (smallest cells) among the two geometries
         if SF.coll_1.max_resolution > SF.coll_2.max_resolution:
             max_resolution = SF.coll_1.max_resolution
@@ -120,10 +119,10 @@ class DGGSsfRelationships:
         # estimate which geometry is smaller based on their lengths
         if len(SF.coll_1) < len(SF.coll_2):
             smaller_collection_neighbours = SF.coll_1.neighbours(max_resolution)
-            larger_collection = cells_two
+            larger_collection = SF.coll_2.cell_suids
         else:
             smaller_collection_neighbours = SF.coll_2.neighbours(max_resolution)
-            larger_collection = cells_one
+            larger_collection = SF.coll_1.cell_suids
         # if the neighbouring cells of a geometry are common to the other geometry then they touch
         # with the caveat that we must use neighbours at the maximum (smallest cells) resolution
         # .. and we need to filter on geometries that overlap in the first place
