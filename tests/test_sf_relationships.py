@@ -92,6 +92,3 @@ def test_sf_touches_false_2():
 
 def test_sf_touches_false_3():
     assert not sfTouches("R03 R04", "R03 R04 R06 R07")
-
-if __name__ == '__main__':
-    test_sf_overlaps()

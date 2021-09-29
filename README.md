@@ -50,7 +50,7 @@ print(f"b intersects c, expected False, returns: {sfIntersects(b, c)}")
 **sfOverlaps:** One set of cells (A) overlaps some other set of cells (B) where the addition of A's cells to B results in a set of cells different from A and B, and A and B are not disjoint and do not touch.   
 
 ## Testing
-All tests are in `tests/` and implemented using [unittest](http://docs.python.org/library/unittest.html).
+All tests are in `tests/` and implemented using [pytest](https://docs.pytest.org/en/6.2.x/). 
 
 There are sets of tests for each of the Simple Feature functions. 
 

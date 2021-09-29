@@ -17,7 +17,7 @@ class DGGSsfRelationships:
         :return: boolean as to whether the cell/cells is/are equal
         """
         SF = cls(cells_one, cells_two)
-        if SF.coll_1.cell_suids == SF.coll_2.cell_suids:
+        if SF.coll_1.suids == SF.coll_2.suids:
             return True
         return False
 
@@ -30,9 +30,9 @@ class DGGSsfRelationships:
         """
         # first check cells_one and cells_two are not equal
         SF = cls(cells_one, cells_two)
-        if not cls.sfEquals(SF.coll_1.cell_suids, SF.coll_2.cell_suids):
+        if not cls.sfEquals(SF.coll_1.suids, SF.coll_2.suids):
             # then if cells_one + cells_two = cells_one, cells_one must contain cells_two
-            if (SF.coll_1 + SF.coll_2).cell_suids == SF.coll_1.cell_suids:
+            if (SF.coll_1 + SF.coll_2).suids == SF.coll_1.suids:
                 return True
         return False
 
@@ -45,9 +45,9 @@ class DGGSsfRelationships:
         """
         # first check cells_one and cells_two are not equal
         SF = cls(cells_one, cells_two)
-        if not cls.sfEquals(SF.coll_1.cell_suids, SF.coll_2.cell_suids):
+        if not cls.sfEquals(SF.coll_1.suids, SF.coll_2.suids):
             # then if cells_one + cells_two = cells_two, cells_two must contain cells_one
-            if (SF.coll_1 + SF.coll_2).cell_suids == SF.coll_2.cell_suids:
+            if (SF.coll_1 + SF.coll_2).suids == SF.coll_2.suids:
                 return True
         return False
 
@@ -78,7 +78,7 @@ class DGGSsfRelationships:
         """
         SF = cls(cells_one, cells_two)
         if not region_region_intersection(
-                SF.coll_1.cell_suids, SF.coll_2.cell_suids
+                SF.coll_1.suids, SF.coll_2.suids
                 ) and not cls.sfTouches(cells_one, cells_two):
             return True
         return False
@@ -109,7 +109,7 @@ class DGGSsfRelationships:
             return False
         # if the geometries have regional intersection, they do not touch, they have some other spatial relationship
         SF = cls(cells_one, cells_two)
-        if region_region_intersection(SF.coll_1.cell_suids, SF.coll_2.cell_suids):
+        if region_region_intersection(SF.coll_1.suids, SF.coll_2.suids):
             return False
         # find the max resolution (smallest cells) among the two geometries
         if SF.coll_1.max_resolution > SF.coll_2.max_resolution:
@@ -119,14 +119,14 @@ class DGGSsfRelationships:
         # estimate which geometry is smaller based on their lengths
         if len(SF.coll_1) < len(SF.coll_2):
             smaller_collection_neighbours = SF.coll_1.neighbours(max_resolution)
-            larger_collection = SF.coll_2.cell_suids
+            larger_collection = SF.coll_2.suids
         else:
             smaller_collection_neighbours = SF.coll_2.neighbours(max_resolution)
-            larger_collection = SF.coll_1.cell_suids
+            larger_collection = SF.coll_1.suids
         # if the neighbouring cells of a geometry are common to the other geometry then they touch
         # with the caveat that we must use neighbours at the maximum (smallest cells) resolution
         # .. and we need to filter on geometries that overlap in the first place
-        if common_cells(smaller_collection_neighbours.cell_suids, larger_collection):
+        if common_cells(smaller_collection_neighbours.suids, larger_collection):
             return True
         return False
 
