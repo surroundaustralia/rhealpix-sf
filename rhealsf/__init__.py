@@ -8,4 +8,4 @@ sfWithin = DGGSsfRelationships.sfWithin
 sfTouches = DGGSsfRelationships.sfTouches
 sfIntersects = DGGSsfRelationships.sfIntersects
 
-__version__ = "0.1"
+__version__ = "0.2"
