@@ -7,6 +7,9 @@ A wrapped version of this library is available as an RDFLib extension for GeoSPA
 Using PIP:  
 ```pip install rhealpix-sf```
 
+Using poetry:
+```poetry add rhealpix-sf```
+
 This package depends on the [rhealpix-geo](https://github.com/surroundaustralia/rhealpix-geo) package to represent valid sets of Cells, and perform low level operations required to implement these functions.
 
 ## Use

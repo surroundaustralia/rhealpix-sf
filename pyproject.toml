@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "rhealpix-sf"
+version = "0.4.0"
+description = "This library contains functions for evaluating Simple Feature relations between DGGS Cells and sets of these."
+authors = ["david-habgood <david.habgood@surroundaustralia.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+rhealpix-geo = "^0.3.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

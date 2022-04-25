@@ -1,0 +1,18 @@
+[[package]]
+name = "rhealpix-geo"
+version = "0.3.0"
+description = "Objects for DGGS Cells and collections of Cells."
+category = "main"
+optional = false
+python-versions = ">=3.8,<4.0"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.8"
+content-hash = "e04fa512cc65fcd101f8084a0b81f4a032288aaaded44ab615ce8aa7f4085e77"
+
+[metadata.files]
+rhealpix-geo = [
+    {file = "rhealpix-geo-0.3.0.tar.gz", hash = "sha256:b11aaa3562e0e37386c432fb5fc9e060cd961e8013f98626d5fe774c3c6ec73e"},
+    {file = "rhealpix_geo-0.3.0-py3-none-any.whl", hash = "sha256:bde8d7cdfc27b82f755be81d9cbeca72fe33d8d4c46d3fe472b58adaf0994a30"},
+]
